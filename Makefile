@@ -5,7 +5,7 @@ SRC_PATH := ./cmd
 GOPATH := ${SRC_PATH}
 
 SERVICE := atella
-DESCRIPTION := "Atella. Agent for distributed checking servers status"
+DESCRIPTION := "Atella."
 EXECUTABLE := ${SERVICE}
 LICENSE := "GPL-3.0"
 URL := "https://github.com/JIexa24/Atella"
@@ -38,7 +38,7 @@ build:
 .PHONY: testbuild 
 testbuild: 
 	for s in `ls ${SRC_PATH}`; do \
-		CGO_ENABLED=0 GOOS=${OS} GOARCH=${ARCH} $(CC) -a -installsuffix cgo -ldflags -X main.Version=${VERSION_RELEASE} -X main.GoVersion=${GO_VERSION} -X main.GitCommit=${GIT_HASH}" -o ${BIN_PATH}/"$$s" ${CFLAGS} ${SRC_PATH}/$$s/$$s.go; \
+		CGO_ENABLED=0 GOOS=${OS} GOARCH=${ARCH} $(CC) -a -installsuffix cgo -ldflags "-X main.Version=${VERSION_RELEASE} -X main.GoVersion=${GO_VERSION} -X main.GitCommit=${GIT_HASH}" -o ${BIN_PATH}/"$$s" ${CFLAGS} ${SRC_PATH}/$$s/$$s.go; \
 	done
 
 .PHONY: tar-deb

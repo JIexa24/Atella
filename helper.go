@@ -40,7 +40,6 @@ func ElExistsInt64(array []int64, item int64) bool {
 
 // SubsetInt64 return whether first is a subset of second
 func SubsetInt64(first, second []int64) bool {
-
 	set := make(map[int64]bool)
 	for _, value := range second {
 		set[value] = true

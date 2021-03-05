@@ -24,15 +24,7 @@ func GetDefault() *atella.Config {
 			LogFile:  "stdout",
 			LogLevel: "info",
 		},
-		PidFile:      "/run/atella.pid",
-		ProcFile:     "/run/atella.proc",
-		Connectivity: 0,
-		Master:       false,
-		Interval:     "10s",
-		NetTimeout:   "2s",
-		Channels:     nil,
-		Security:     "code",
-		Hosts:        nil}
+	}
 	return local
 }
 
