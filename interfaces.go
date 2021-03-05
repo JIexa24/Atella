@@ -33,28 +33,3 @@ type LoggerConfig struct {
 	LogFile  string `yaml:"log_file"`
 	LogLevel string `yaml:"log_level"`
 }
-
-// Host describe every host in config.
-type Host struct {
-	Address  string   `yaml:"address"`
-	Port     string   `yaml:"port"`
-	Hostname string   `yaml:"hostname"`
-	Web      bool     `yaml:"web"`
-	Master   bool     `yaml:"master"`
-	Sectors  []string `yaml:"sectors"`
-}
-
-// Sector is struct, which describes a sector.
-// Contains self indexes and host indexes.
-type Sector struct {
-	SelfIndexes  []int64
-	HostsIndexes []int64
-}
-
-// ParsedHosts is a struct for parsing hosts. Contains self hosts indexes,
-// masters and sectors mapper.
-type ParsedHosts struct {
-	SelfIndexes   []int64
-	MasterIndexes []int64
-	SectorMapper  map[string]Sector
-}
