@@ -60,6 +60,7 @@ func handle(c chan os.Signal) {
 		case "hangup":
 
 		case "interrupt":
+			global.reporterWorker.StopReporter()
 			close(global.finalize)
 		case "user defined signal 1":
 		case "user defined signal 2":
